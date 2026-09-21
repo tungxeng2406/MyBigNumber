@@ -17,3 +17,14 @@
 # OS
 .DS_Store
 Thumbs.db
+
+# Environment / secrets
+.env
+.env*
+secrets/
+*.pem
+vendor/proprietary/
+
+# Tooling / generated artifacts
+bin/
+node_modules/
