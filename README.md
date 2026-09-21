@@ -97,6 +97,12 @@ Current release tag:
 v0.0.1
 ```
 
+## Release Notes
+
+See the detailed release notes here:
+
+- [RELEASE_NOTES_v0.0.1.md](RELEASE_NOTES_v0.0.1.md)
+
 ## Notes
 
 - The application is configured to run on port `8081`.
@@ -105,4 +111,4 @@ v0.0.1
 
 ## License
 
-This project is intended for learning, demonstration, and personal practice.
+This project is distributed under the MIT License. See [LICENSE](LICENSE) for details.
