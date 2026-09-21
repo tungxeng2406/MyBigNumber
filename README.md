@@ -1,34 +1,31 @@
 # MyBigNumber
 
-A Spring Boot multi-module project that adds two very large numbers using custom logic instead of relying on the built-in `BigInteger` type.
+A Java + Spring Boot project that performs addition for very large numbers using custom string-based arithmetic instead of relying on the built-in `BigInteger` type.
 
-## Project Overview
+## Overview
 
-This project is divided into two Maven modules:
+This project is organized as a multi-module Maven application:
 
-- `core`: contains the arithmetic logic for large-number addition
-- `web`: contains the Spring Boot web interface and controller
+- `core`: contains the calculation logic for large-number addition
+- `web`: contains the Spring Boot web application and Thymeleaf UI
+
+It is designed to handle large numeric inputs safely and to validate invalid values, such as non-digit characters.
 
 ## Features
 
-- Adds two large numeric strings safely
-- Validates input to ensure only digits are accepted
-- Shows each calculation step in the UI
-- Supports running as a standalone Spring Boot application
+- Add two very large numbers represented as strings
+- Validate numeric input strictly
+- Display the result and calculation history in the web UI
+- Multi-module Maven structure
+- Java 17 + Spring Boot 3.3.3
 
-## Tech Stack
-
-- Java 17
-- Maven
-- Spring Boot 3.3.3
-- Thymeleaf
-- JUnit 5
-
-## Project Structure
+## Project structure
 
 ```text
-Add2Number/
+MyBigNumber/
 ├── pom.xml
+├── README.md
+├── .gitignore
 ├── core/
 │   ├── pom.xml
 │   └── src/
@@ -40,8 +37,16 @@ Add2Number/
 │       ├── main/java/com/example/mybignumber/web/
 │       ├── main/resources/application.properties
 │       └── main/resources/templates/index.html
-└── README.md
+└── web/target/
 ```
+
+## Tech stack
+
+- Java 17
+- Maven
+- Spring Boot 3.3.3
+- Thymeleaf
+- JUnit 5
 
 ## Build
 
@@ -57,30 +62,18 @@ Or build only the web module:
 mvn -pl web clean package
 ```
 
-## Run with Maven
+## Run the application
+
+Run the web module:
 
 ```bash
 mvn -pl web spring-boot:run
 ```
 
-Then open:
+Then open in the browser:
 
 ```text
 http://localhost:8081/
-```
-
-## Run the packaged JAR
-
-After building the project:
-
-```bash
-java -jar web/target/web-0.0.1.jar --server.port=9090
-```
-
-Then open:
-
-```text
-http://localhost:9090/
 ```
 
 ## Example
@@ -96,12 +89,20 @@ Output:
 100000000000000000000
 ```
 
+## Version
+
+Current release tag:
+
+```text
+v0.0.1
+```
+
 ## Notes
 
-- The app listens on port 8081 in the project config.
-- Final standalone verification was done on port 9090 because some local ports were already in use.
-- The arithmetic logic intentionally supports very large numbers as strings and avoids overflow issues.
+- The application is configured to run on port `8081`.
+- The core logic was validated with Unit Tests.
+- The repo is ready for GitHub release management.
 
 ## License
 
-This project is for learning and demonstration purposes.
+This project is intended for learning, demonstration, and personal practice.
